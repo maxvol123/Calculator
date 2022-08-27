@@ -26,8 +26,20 @@ function App() {
       setValue(evaluate(value).toString())
       return
     }
-    console.log(value.slice(-1));
+    console.log(value.slice(1));
     
+    if (btn.toString()==="+-") {
+      if (value[0]==='-') {
+        setValue(value.slice(1))
+        return
+      }
+      setValue("-".concat(value))
+      return
+    }
+    console.log(value.slice(-1));
+    if (btn.toString()==="0"&&value==="") {
+      return
+    }
     setValue(value+btn.toString())
   }
   return (
